@@ -5,3 +5,7 @@ scikit-learn>=1.4
 joblib>=1.4
 pydantic>=2.6
 python-multipart>=0.0.9
+
+sqlmodel>=0.0.22
+passlib[bcrypt]>=1.7
+pyjwt>=2.8

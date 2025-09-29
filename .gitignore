@@ -3,7 +3,7 @@ __pycache__/
 *.pyo
 *.DS_Store
 .env
-saved_models/*.tmp
 server.log
 ml_server.db
+saved_models/*.tmp
 data/*.tmp

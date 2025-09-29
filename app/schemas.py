@@ -1,6 +1,7 @@
 from typing import Union
 from pydantic import BaseModel, Field
 
+# ----- ML -----
 class PredictRequest(BaseModel):
     age: float = Field(..., ge=0, lt=120)
     subject_instrument: str = Field(..., min_length=1)
@@ -13,3 +14,20 @@ class PredictResponse(BaseModel):
 class TrainResponse(BaseModel):
     mse: float
     r2: float
+
+# ----- Users & Tokens -----
+class SignupRequest(BaseModel):
+    username: str
+    password: str
+
+class RemoveUserRequest(BaseModel):
+    username: str
+    password: str
+
+class AddTokensRequest(BaseModel):
+    username: str
+    credit_card: str
+    amount: int = Field(ge=1)
+
+class TokensResponse(BaseModel):
+    tokens: int
