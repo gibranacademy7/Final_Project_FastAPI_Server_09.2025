@@ -1,5 +1,5 @@
 from typing import Union
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, constr
 
 # ----- ML -----
 class PredictRequest(BaseModel):
@@ -18,11 +18,11 @@ class TrainResponse(BaseModel):
 # ----- Users & Tokens -----
 class SignupRequest(BaseModel):
     username: str
-    password: str
+    password: constr(min_length=1, max_length=72)  # bcrypt limit
 
 class RemoveUserRequest(BaseModel):
     username: str
-    password: str
+    password: constr(min_length=1, max_length=72)
 
 class AddTokensRequest(BaseModel):
     username: str
