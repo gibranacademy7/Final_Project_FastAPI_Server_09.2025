@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+*.DS_Store
+.env
+saved_models/*.tmp
+server.log
+ml_server.db
+data/*.tmp
